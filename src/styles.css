@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    background-color: gray;
+}
+#mainContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3px;
+    
+}
+
+#topDiv {
+    grid-column: 1/3;
+    background-color: #2db6b1;
+    padding: 30px;
+    font-size: 1.7rem;
+    border-radius: 0px 0px 10px 10px;
+    
+    color: rgb(245, 245, 245);
+}
+
+#userName {
+    font-weight: 600;
+    color: rgb(238, 238, 88);
+}
+
+.greet {
+    padding-left: 30px;
+}
+
+#projectDiv,
+#todoDiv {
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.5);
+}
+
+#projectDiv {
+    grid-row: 2/3;
+    background-color: #aed455;
+    height: 10vh;
+}
+
+#todoDiv {
+    background-color: #cfee86;
+}
+
+.folder {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(32, 245, 174);
+    padding: 20px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+}
+
+.folder:hover {
+    cursor: pointer;
+    background-color: rgb(135, 228, 197);
+ } 
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#btnProject,
+#btnTodo {
+    margin: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(11, 165, 165);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+#btnProject:hover,
+#btnTodo:hover {
+    background-color: rgb(105, 201, 201);
+}
+
+.todo {
+    padding: 10px;
+    font-size: 1.3rem;
+    background-color: rgb(238, 238, 88);
+}
+
+
+#closeBtn,
+#closeForm {
+  border: 1px solid rgb(65, 64, 64);
+  padding: 3px 12px;
+  background-color: rgb(218, 125, 125);
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+#closeBtn:hover {
+    background-color: rgb(226, 154, 154);
+}
+
+#closeForm {
+    position: relative;
+    bottom: 8px;
+    left: 120px;
+}
+
+#closeForm:hover {
+    cursor: pointer;
+    background-color: rgb(226, 154, 154);
+    font-weight: 800;
+}
+
+
+#formContainer {
+    border: 2px solid black;
+    background-color: pink;
+    padding: 15px 0px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    width: 300px;
+    position: absolute;
+    top: 14%;
+    left: 60%;
+    
+}
+
+.formHide {
+    display: none;
+}
+
+#input_wrap{
+    margin-bottom: 4px;
+}
+
+input[type=text],
+input[type=date] {
+    padding: 5px 0px;
+    width: 10vh;
+}
+
+input[type=text] {
+    width: 10.2vh;
+}
+
+select {
+    padding: 5px 0px;
+    width: 12.3vh;
+}
+#addBtn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: rgb(11, 165, 165);
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    border-radius: 5px;
+}
+
+#addBtn:hover {
+    cursor: pointer;
+    background-color: rgb(105, 201, 201)
+}
+
+#taskHolder {
+    display: flex;
+    justify-content: space-between;
+}
+
+
