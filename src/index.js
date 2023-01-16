@@ -1,53 +1,44 @@
 import './styles.css';
+import { addTodo, todoArray } from './makeTodos.js';
+import { addFolder } from './makeFolder.js';
+
 
 const btnTodo = document.querySelector('#btnTodo');
 const formContainer = document.querySelector('#formContainer');
 const closeForm = document.querySelector('#closeForm');
 const addBtn = document.querySelector('#addBtn');
-const todo = document.querySelector('.todo');
 
-const todoArray = [];
+const todo = document.querySelector('.todoContainer');
 
-const todoFactory = (title, due, priority) => {
-    const sayHello = () => console.log('this is todo Factory test');
+const mainContainer = document.querySelector('#mainContainer');
+const todoDiv = document.querySelector('#todoDiv');
 
-    return{title, due, priority};
-}
-
-const addFunction = () => {
-    todoArray.push(todoFactory(title.value, due.value, priority.value + " priority"));
-
-    const taskHolder = document.createElement('div');
-    taskHolder.setAttribute('id', 'taskHolder');
-
-    console.log(todoArray);
-    for(let data in todoArray[todoArray.length-1]) {
-        console.log(todoArray[todoArray.length-1]);
-
-        const childHolder = document.createElement('div');
-        childHolder.textContent = todoArray[todoArray.length-1][data];
-        todo.appendChild(taskHolder)
-        taskHolder.appendChild(childHolder);
-    }
-
-    formContainer.classList.add('formHide')
-}
-
-
-const todo1 = todoFactory('eat', 'now', 'normal');
-console.log(todo1);
-
-closeForm.addEventListener('click', () => {
-    formContainer.classList.add('formHide');
+// create project
+const btnProject = document.querySelector('#btnProject');
+btnProject.addEventListener('click', () => {
+    addFolder();
 })
+
+const defaultFolder = document.querySelector('.defaultFolder');
+defaultFolder.addEventListener('click', () =>{
+    document.querySelector('#mainContainer').removeChild(document.querySelector('#mainContainer').lastElementChild);
+    mainContainer.appendChild(todoDiv);
+})
+
+// end project
+
 
 btnTodo.addEventListener('click', () =>{
     formContainer.removeAttribute('class');
 })
 
-addBtn.addEventListener('click', () =>{
-    event.preventDefault();
-    addFunction();
-    //should run todoFactory
-    //appendChild of tasks  to the DOM
+closeForm.addEventListener('click', () => {
+    formContainer.classList.add('formHide');
 })
+
+addBtn.addEventListener('click', () =>{
+    addTodo();
+    console.log(todoArray);
+    formContainer.classList.add('formHide');
+})
+//for folders functionality create a new module everytime then run old  module again when user click on that folder?

@@ -52,6 +52,7 @@ body {
     padding: 20px;
     font-size: 1.3rem;
     border-radius: 10px;
+    margin-bottom: 3px;
 }
 
 .folder:hover {
@@ -78,6 +79,7 @@ body {
 
 #btnProject:hover,
 #btnTodo:hover {
+    cursor: pointer;
     background-color: rgb(105, 201, 201);
 }
 
@@ -85,6 +87,7 @@ body {
     padding: 10px;
     font-size: 1.3rem;
     background-color: rgb(238, 238, 88);
+    border-radius: 10px;
 }
 
 
@@ -165,9 +168,75 @@ select {
     background-color: rgb(105, 201, 201)
 }
 
-#taskHolder {
+.taskHolder {
     display: flex;
-    justify-content: space-between;
+    padding: 10px 10px;
+    font-size: 1.3rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: #cfee86;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
 }
 
+.text {
+    flex: 1;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    margin-right: 15px;
+    margin-left: 50px;
+}
+
+.removeBtn {
+    padding: 3px 12px;
+    margin-right: 50px;
+    background-color: rgb(218, 125, 125);
+    border-radius: 4px;
+    font-weight: 800;
+}
+
+.removeBtn:hover {
+    cursor: pointer;
+    background-color: rgb(226, 154, 154);
+    font-weight: 800;
+}
+
+.editBtn {
+    font-weight: 600;
+    background-color: rgb(105, 201, 201);
+    margin-right: 8px;
+    border-radius: 5px;
+}
+
+.editBtn:hover {
+    cursor: pointer;
+    background-color: rgb(140, 233, 233);
+}
+
+.lineThrough {
+    text-decoration: line-through;
+}
+
+.inputTitle,
+.inputDate,
+.inputPrio {
+    flex: 1;
+    margin-right: 30px;
+    background-color: rgb(238, 210, 157);
+    width: 20px;
+}
+
+#okBtn {
+    font-weight: 600;
+    background-color: rgb(105, 201, 129);
+    margin-right: 8px;
+    border-radius: 5px;
+}
+
+#okBtn:hover {
+    cursor: pointer;
+    background-color: rgb(114, 207, 137);
+}
 
