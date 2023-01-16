@@ -15,23 +15,23 @@
 
         <div id="projectDiv">
             <div class="btnContainer"><button type="button" id="btnProject">+ Create New Project</button></div>
-            <div class="folderContainer"><div class="folder">Sample Default Folder <span id="closeBtnContainer"><button type="button" id="closeBtn">x</button></span></div></div>
+            <div class="folderContainer"><div class="folder defaultFolder">Sample Default Folder <span id="closeBtnContainer"><button type="button" id="closeBtn">x</button></span></div></div>
         </div>
 
         <div id="todoDiv">
             <div class="btnContainer"><button type="button" id="btnTodo">+ New To Do</button></div>
             
             <div id="formContainer" class="formHide" >
-                <form action="main.js" >
+                <form action="index.js" >
                     <button type="button" id="closeForm">x</button>
                     <div id="input_wrap" >
                         <label for="title">Title:</label>
-                        <input type="text" name="title" id="title" placeholder="Your task:">
+                        <input type="text" name="title" id="title" placeholder="Your task:" value="task1">
                     </div>
 
                     <div id="input_wrap">
                         <label for="due">Due:</label>
-                        <input type="date" id="due" name="due" required>
+                        <input type="date" id="due" name="due">
                     </div>
 
                     <div id="input_wrap">
@@ -47,8 +47,9 @@
 
                 </form>
             </div>
+         
+            <div class="todoContainer"></div>
             
-            <div class="todo"><input type="checkbox"><s>This is a sample to do</s></div>
         </div>
 
     </div>
