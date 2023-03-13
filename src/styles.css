@@ -28,8 +28,7 @@ body {
     padding-left: 30px;
 }
 
-#projectDiv,
-#todoDiv {
+#projectDiv {
     border-radius: 10px;
     margin: 5px;
     box-shadow: 0 5px 10px rgb(0 0 0 / 0.5);
@@ -39,6 +38,7 @@ body {
     grid-row: 2/3;
     background-color: #aed455;
     height: 10vh;
+    padding: 10px 0;
 }
 
 #todoDiv {
@@ -63,6 +63,7 @@ body {
 .btnContainer {
     display: flex;
     justify-content: center;
+    
 }
 
 #btnProject,
@@ -142,11 +143,7 @@ body {
 input[type=text],
 input[type=date] {
     padding: 5px 0px;
-    width: 10vh;
-}
-
-input[type=text] {
-    width: 10.2vh;
+    width: 15vh;
 }
 
 select {
@@ -238,5 +235,12 @@ input[type=checkbox] {
 #okBtn:hover {
     cursor: pointer;
     background-color: rgb(114, 207, 137);
+}
+
+#todoBarWrapper {
+    background-color: #aed455;
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.5);
 }
 

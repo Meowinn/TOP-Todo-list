@@ -1,5 +1,3 @@
-const todo = document.querySelector('.todoContainer');
-
 let todoArray = [];
 
 const todoFactory = (title, due, priority) => {
@@ -7,30 +5,33 @@ const todoFactory = (title, due, priority) => {
     due = due.value;
     priority = priority.value;
 
-    return{title, due, priority};
+    return { title, due, priority };
 };
 
 
 function addTodo() {
+    const todo = document.querySelector('.newTodoContainer');
+
     event.preventDefault();
     todoArray.push(todoFactory(title, due, priority));
-    render();
+    render(todo);
 };
 
-function render() {
+function render(to) {
     //call todo
     const multiTaskHolder = document.querySelectorAll('.taskHolder');
-    multiTaskHolder.forEach(taskHolder => todo.removeChild(taskHolder));
-    
-    for(let i = 0; i<todoArray.length; i++) {
-        createTodo(todoArray[i]);
+    multiTaskHolder.forEach(taskHolder => to.removeChild(taskHolder));
+
+    for (let i = 0; i < todoArray.length; i++) {
+        createTodo(todoArray[i], to);
     }
 
 }
 
-function createTodo(item) {
+function createTodo(item, to) {
+
     //call todo = #library-container
-    
+
     const taskHolder = document.createElement('div'); //= bookDiv
     const checkBox = document.createElement('input');
     const titleDiv = document.createElement('div');
@@ -65,11 +66,11 @@ function createTodo(item) {
     removeBtn.innerText = 'Remove';
     taskHolder.appendChild(removeBtn);
 
-    todo.appendChild(taskHolder);
+    to.appendChild(taskHolder);
 
     checkBox.addEventListener('change', (e) => {
-        
-        if(e.target.checked) {
+
+        if (e.target.checked) {
             taskHolder.style.backgroundColor = 'rgb(65, 64, 64)';
             taskHolder.style.color = 'gray';
             titleDiv.classList.add('lineThrough');
@@ -134,7 +135,7 @@ function createTodo(item) {
         // taskHolder.appendChild(okBtn);
 
         editBtn.parentNode.replaceChild(okBtn, editBtn);
-        
+
         okBtn.addEventListener('click', () => {
             console.log(inputTitle.value);
 
@@ -149,19 +150,19 @@ function createTodo(item) {
             inputTitle.parentNode.replaceChild(titleDiv, inputTitle);
             inputDate.parentNode.replaceChild(dueDiv, inputDate);
             inputPrio.parentNode.replaceChild(prioDiv, inputPrio);
-        
-        okBtn.parentNode.replaceChild(editBtn, okBtn);
+
+            okBtn.parentNode.replaceChild(editBtn, okBtn);
 
             okBtn.remove();
-            })
+        })
         // end button
     })
     // end edit
     removeBtn.addEventListener('click', () => {
         todoArray.splice(todoArray.indexOf(item), 1);
-        render();
+        render(to);
         console.log(todoArray);
     })
 }
 
-export {addTodo, todoArray};
+export { addTodo, todoArray };
